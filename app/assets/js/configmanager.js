@@ -6,7 +6,7 @@ const logger = require('./loggerutil')('%c[ConfigManager]', 'color: #a02d2a; fon
 
 const sysRoot = process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Application Support' : process.env.HOME)
 // TODO change
-const dataPath = path.join(sysRoot, '.helioslauncher')
+const dataPath = path.join(sysRoot, '.TenseiLauncher')
 
 // Forked processes do not have access to electron, so we have this workaround.
 const launcherDir = process.env.CONFIG_DIRECT_PATH || require('@electron/remote').app.getPath('userData')
@@ -24,7 +24,7 @@ exports.getLauncherDirectory = function(){
  * Get the launcher's data directory. This is where all files related
  * to game launch are installed (common, instances, java, etc).
  * 
- * @returns {string} The absolute path of the launcher's data directory.
+ * @returns {string} The absolute path of the launcher's data directory.sn
  */
 exports.getDataDirectory = function(def = false){
     return !def ? config.settings.launcher.dataDirectory : DEFAULT_CONFIG.settings.launcher.dataDirectory
